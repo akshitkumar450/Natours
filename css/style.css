@@ -47,11 +47,13 @@ body {
   left: 50%;
   /* to make the center in the middle of the box */
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #ffffff;
   text-transform: uppercase;
+  margin-bottom: 50px;
 }
 .heading-primary-main {
   display: block;
@@ -99,4 +101,33 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+/* making animated button */
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+.btn:hover {
+  /* to go up */
+  /* when we hover it will go up  */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  /* to go little up so as to feel like click */
+  /* when we click it will do little down */
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: #777;
+  padding: 15px 40px;
 }
