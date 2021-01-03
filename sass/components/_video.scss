@@ -1,0 +1,19 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //   height and widht will be of 100% of the parent (container) element
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.25;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+
+    //element will cover it  parent entirley while maintaining the aspect ratio
+    object-fit: cover;
+  }
+}
