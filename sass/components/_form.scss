@@ -1,0 +1,57 @@
+.form {
+  text-transform: capitalize;
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 3px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    text-transform: capitalize;
+
+    // to style the placeholder for input
+
+    &::-webkit-input-placeholder {
+      color: $color-gray-dark-2;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    // will work when we have input focused invalid text
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  //   we have use adjacent sibling selector here
+  //   when the input placeholder is shown,  means we have not written anything on the input
+  //   &__input:placeholder-shown &__label --> we can't use it bcz label in not the  child of input they are sibblings
+  //    label must be after the input
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    //  to move down the label text
+    transform: translateY(-4rem);
+  }
+}
