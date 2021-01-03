@@ -1,0 +1,35 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.4);
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  //    for skew the section
+  transform: skewX(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    // first is the radius --> which will be half the height and width of the element==>15/2=>7.5
+    // second is the center
+    // shape-outside will work only when the element is floated and element has the dimensions
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    // to give any space around the floated element we should use tranform instaed of margin
+    // we have skewed to get back the img in normal postion
+    transform: translateX(-1rem) skewX(12deg);
+  }
+
+  &__img {
+    //   height will be 00% of the parent elemnt which will be story__shape
+    height: 100%;
+  }
+
+  // we have skewed to get back the img in normal postion
+  &__text {
+    transform: skewX(12deg);
+  }
+}
