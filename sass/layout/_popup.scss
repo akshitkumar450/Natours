@@ -1,0 +1,56 @@
+.popup {
+  background-color: rgba($color-gray-dark-2, 0.8);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+
+  &__content {
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: table;
+  }
+
+  //  we can use float to position them side by side but
+  //  we want the left and right section to have same height so that we center them vertically .
+  // using floats we can't achive them.
+  // so use table-cell property on child and on parent display to table.
+  //    using table cell browser will give them same height
+  &__left {
+    width: 33.3333%;
+    display: table-cell;
+    // float: left;
+  }
+
+  &__right {
+    width: 66.66667%;
+    display: table-cell;
+    //  vertical align on table
+    vertical-align: middle;
+    padding: 4rem 5rem;
+    // float: right;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-white;
+    //  to generate auto hypens
+    hyphens: auto;
+  }
+}
