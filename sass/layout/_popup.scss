@@ -6,6 +6,34 @@
   top: 0;
   left: 0;
   z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+
+  //    this will work when the link in anchor changes
+  //    when target is on the popup
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  //    when the close anchor is click the target property changes to section-tours ,,means popup:target propety will gone.
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 2rem;
+      right: 4rem;
+      font-size: 4rem;
+      text-decoration: none;
+      color: $color-gray-dark-2;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
 
   &__content {
     width: 75%;
@@ -14,8 +42,21 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
+    //  to giev a nice effect
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s 0.2s;
+    transform: translate(-50%, -50%) scale(0.6);
     display: table;
+  }
+
+  //  to give a nice effect
+  //  when the target is on popup we want content to be show in with nice zooming effect
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    opacity: 1;
   }
 
   //  we can use float to position them side by side but
