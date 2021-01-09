@@ -1,11 +1,21 @@
 .row {
   max-width: $grid-width;
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 1rem;
+  }
   // background-color: yellow;
   margin: 0 auto;
   // color: $color-white;
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+      padding: 1rem;
+    }
   }
 
   @include clearfix;
@@ -15,6 +25,16 @@
     // background-color: orangered;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: 6rem;
+        padding: 1rem;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important ;
     }
   }
 

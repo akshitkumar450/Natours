@@ -12,6 +12,11 @@
     position: fixed;
     top: 6rem;
     right: 6rem;
+    @include respond(tab-port) {
+      position: fixed;
+      top: 2rem;
+      right: 3rem;
+    }
     text-align: center;
     cursor: pointer;
     //  should be above  the button
@@ -28,10 +33,17 @@
       $color-primary-light,
       $color-primary-dark
     );
+
+    @include respond(tab-port) {
+      position: fixed;
+      top: 2.5rem;
+      right: 3.5rem;
+    }
     // takes element out of flow
     position: fixed;
     top: 6.5rem;
     right: 6.5rem;
+
     // to be above the rest of the page while scrolling
     z-index: 1000;
     transition: transform 0.8s ease;
