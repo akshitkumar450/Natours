@@ -851,6 +851,9 @@ body {
     transition: all 0.8s 0.2s;
     transform: translate(-50%, -50%) scale(0.6);
     display: table; }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        text-align: center; } }
   .popup:target .popup__content {
     transform: translate(-50%, -50%) scale(1);
     visibility: visible;
@@ -858,14 +861,26 @@ body {
   .popup__left {
     width: 33.3333%;
     display: table-cell; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        width: 100%;
+        display: block; } }
   .popup__right {
     width: 66.66667%;
     display: table-cell;
     vertical-align: middle;
     padding: 4rem 5rem; }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        display: block; } }
   .popup__img {
     width: 100%;
     display: block; }
+    @media (max-width: 56.25em) {
+      .popup__img {
+        width: 40%;
+        display: inline-block; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
