@@ -78,10 +78,6 @@ body {
     body {
       padding: 0; } }
 
-::selection {
-  background-color: #55c57a;
-  color: #fff; }
-
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
@@ -387,7 +383,7 @@ body {
     font-size: 5.5rem;
     color: #fff;
     font-weight: 100; }
-  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+  @media (max-width: 56.25em) {
     .card {
       height: auto;
       border-radius: 3px;
