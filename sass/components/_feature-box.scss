@@ -10,6 +10,11 @@
   &__icon {
     font-size: 6rem;
     margin-bottom: 5px;
+
+    @include respond(tab-port) {
+      margin-bottom: 1rem;
+    }
+
     display: inline-block;
     background-image: linear-gradient(
       to right,
